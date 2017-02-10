@@ -1,0 +1,31 @@
+apply plugin: 'com.google.cloud.tools.appengine'
+apply plugin: 'com.google.cloud.tools.endpoints-framework-server'
+
+dependencies {
+    compile "com.google.appengine:appengine-api-1.0-sdk:${appengineVersion}"
+    compile "com.google.endpoints:endpoints-framework:${endpointsVersion}"
+    compile "com.google.endpoints:endpoints-framework-guice:${endpointsVersion}"
+    compile "javax.servlet:servlet-api:2.5"
+    compile 'org.apache.geronimo.specs:geronimo-jpa_2.0_spec:1.1'
+    compile "com.google.inject:guice-parent:4.1.0"
+    compile 'com.google.inject:guice:4.1.0'
+    compile 'com.google.inject.extensions:guice-servlet:4.1.0'
+    compile 'com.google.inject.extensions:guice-multibindings:4.1.0'
+    testCompile "junit:junit:4.+"
+    testCompile "org.mockito:mockito-core:1.+"
+    testCompile "com.google.appengine:appengine-testing:${appengineVersion}"
+    testCompile "com.google.appengine:appengine-api-stubs:${appengineVersion}"
+    testCompile "com.google.appengine:appengine-api-labs:${appengineVersion}"
+    testCompile "com.google.appengine:appengine-tools-sdk:${appengineVersion}"
+}
+
+sourceSets {
+    test {
+        java {
+            srcDir 'src/main/test'
+        }
+    }
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_7  // App Engine Standard uses Java 7
+targetCompatibility = JavaVersion.VERSION_1_7  // App Engine Standard uses Java 7

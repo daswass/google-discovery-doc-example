@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+    <cron>
+        <url>/_ah/sessioncleanup?clear</url>
+        <description>Clear expired sessions from the session cache
+        </description>
+        <schedule>every 30 minutes</schedule>
+    </cron>
+</cronentries>
